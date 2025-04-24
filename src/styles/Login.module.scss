@@ -1,0 +1,477 @@
+// Variables
+$primary-color: #ffb81c;
+$secondary-color: #1a1a1a;
+$text-color: #ffffff;
+$border-color: #333333;
+$input-bg: #ffffff;
+$hero-bg: #253540;
+$epic-blue: #0078f2;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $secondary-color;
+  color: $text-color;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.heroSection {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: url("/background/background.png");
+  object-fit: cover;
+  background-position: center;
+  
+  @media (max-width: 768px) {
+    height: 40vh;
+  }
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.formSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background:url("/background/Rectangle 12872 (1).png");
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 450px;
+  padding: 1rem;
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
+}
+.heading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headerLine {
+  width: 100px;
+  height: 4px;
+  background-color: $primary-color;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  
+  @media (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.authTabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid $border-color;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0.5rem;
+    border-bottom: none;
+  }
+}
+
+.authTab {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+  
+  &:hover {
+    color: $primary-color;
+  }
+  
+  &.activeTab {
+    color: $epic-blue;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $epic-blue;
+    }
+  }
+}
+
+.authOptions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.emailLoginBtn {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  text-align: center;
+  min-width: 180px;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.epicLoginText {
+  color: $primary-color;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  background: none;
+  border: none;
+  padding: 0;
+  
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+
+.form {
+  margin-top: 2rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid $border-color;
+    background: $input-bg;
+    color: $secondary-color;
+    border-radius: 4px;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.passwordLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showHideBtn {
+  background: none;
+  border: none;
+  color: $primary-color;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.eyeIcon {
+  color: $primary-color;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  button {
+    flex: 1;
+    padding: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
+}
+
+.signUpBtn {
+  background-color: #444;
+  color: $text-color;
+  border: 1px solid #666;
+  
+  &:hover {
+    background-color: #555;
+  }
+}
+
+.loginBtn {
+  background-color: $primary-color;
+  color: $secondary-color;
+  border: none;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.signUpButton {
+  width: 100%;
+  background-color: $primary-color;
+  color: $secondary-color;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.epicLoginContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.epicLoginButton {
+  display: flex;
+  background-color: #080808 ; 
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  color: $text-color;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: .75rem;
+  font-weight: bold;
+  transition: all .3s;
+
+  
+  &:hover {
+    background-color: #c43a3a;
+  }
+}
+
+.epicLogo {
+  border-radius: 4px;
+}
+
+.forgotPassword {
+  text-align: center;
+  margin-top: 1.5rem;
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+// Add these new toggle button styles to your existing Login.module.scss file
+
+.toggleButtonContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .toggleButtonWrapper {
+    position: relative;
+    width: 100%;
+    background-color: $secondary-color;
+    border-radius: 9999px;
+    overflow: hidden;
+    height: 48px;
+    border: 1px solid $border-color;
+  }
+  
+  .toggleSlider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: $primary-color;
+    border-radius: 9999px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+  }
+  
+  .toggleButtons {
+    position: relative;
+    display: flex;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .toggleButton {
+    width: 50%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 9999px;
+    transition: color 0.3s;
+    color: $primary-color;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    @media (max-width: 900px) {
+      font-size: 0.9rem;
+      padding: 0.75rem 0.5rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+      padding: 0.75rem 0.5rem;
+    }
+    @media (max-width: 380px) {
+      font-size: 0.6rem;
+      padding: 1rem 0.5rem;
+    }
+  }
+  
+  .activeToggleText {
+    color: $secondary-color;
+  }
+// Add these styles to your existing Login.module.scss file
+
+// Forgot Password specific styles
+.resetMessage {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.backToLoginLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.successMessage {
+  margin-bottom: 2rem;
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+  
+  p {
+    color: #aaa;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    
+    strong {
+      color: $text-color;
+    }
+  }
+}
+
+.backToLoginButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  color: $text-color;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  
+  .arrowIcon {
+    color: $primary-color;
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
